@@ -1,0 +1,14 @@
+/* -----------------------------------------------------------------
+    - Clients
+----------------------------------------------------------------- */
+
+.js-carousel-clients {
+  padding-top: rem(8px);
+  padding-bottom: rem(16px);
+  
+  .swiper-slide {
+    @media only screen and (max-width: $small) {
+	  text-align: center;
+	}
+  }
+}

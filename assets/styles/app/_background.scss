@@ -1,0 +1,42 @@
+// Background
+.bg {
+  &-triangles {
+    background-image: url('../images/triangles-top.svg'),
+	                  url('../images/triangles-bottom.svg');
+	background-position: left top, right bottom;
+    background-repeat: no-repeat;
+	background-size: inherit;
+	
+	@media only screen and (max-width: $small) {
+	  background-size: contain;
+	}	
+  }
+  
+  &-triangles-2 {
+    background-image: url('../images/triangle-2-top.svg'),
+	                  url('../images/triangle-2-bottom.svg');
+	background-position: right top, left bottom;
+    background-repeat: no-repeat;
+	background-size: 50%;
+	background-attachment: fixed;
+	
+	@media only screen and (max-width: $large) {
+	  background-size: contain;
+	}
+  }  
+  
+  &-peach {
+    background-image: $gradient-3;
+	background-attachment: fixed;
+  }
+  
+  &-green {
+    background-image: $gradient-4;
+	background-attachment: fixed;
+  }
+
+  &-green-2 {
+    background-image: $gradient-5;
+	background-attachment: fixed;
+  }  
+}

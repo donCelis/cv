@@ -1,0 +1,523 @@
+$version: "1.0.1";
+
+/* ------------------------------------------------
+ Author: ArtStyles (Art)
+ 
+ Template Name: 
+ version: #{$version}
+------------------------------------------------ */
+
+@import '_color.scss';
+@import '_media.scss';
+
+/* -----------------------------------------------------------------
+    - General Styles
+----------------------------------------------------------------- */
+
+body {
+  direction: rtl;
+  text-align: right;
+}
+
+// Background
+.bg {
+  &-triangles {
+	background-position: right top, left bottom;
+  }  
+}
+
+// Input Text
+.input {
+  text-align: right;
+
+  &__icon {
+    padding-left: 0;
+	padding-right: 3.4rem;
+	
+	@media only screen and (max-width: $small) {
+	  padding-left: 0;
+	  padding-right: 2.8rem;
+	}
+  }  
+}
+
+.form-group {
+  .font-icon { 
+	left: auto;
+    right: 2.4rem;
+	
+	@media only screen and (max-width: $small) {
+	  left: auto;
+	  right: 2.1rem;
+	}
+  }
+}
+
+.help-block {
+  padding-left: 0;
+  padding-right: .4rem;
+}
+
+// Checkbox
+.custom-control-label {
+  padding-left: 0;
+  padding-right: .5rem;	
+}
+
+// Button
+.btn {
+  .font-icon {
+    margin-left: .5rem;
+    margin-right: 0;
+  }
+}
+
+// Dropdown
+.dropdown {
+  &-menu {
+	&::before {
+	  left: auto;
+      right: 1.1rem;
+	}
+  }
+}
+
+/* -----------------------------------------------------------------
+    - Typography
+----------------------------------------------------------------- */
+
+.title { 
+  &-icon {
+    margin-left: .5rem;
+	margin-right: 0;
+  }
+  
+  &__separate {
+    &::before {
+	  left: auto;
+      right: 0;
+    }
+  }
+}
+
+.block-quote {
+  @media only screen and (max-width: $large) {
+    padding-left: 0;
+	padding-right: 3.8rem;
+  }  
+  
+  &::before {
+    left: auto;
+	right: -3.4rem;
+	
+	@media only screen and (max-width: $large) {
+      left: auto;
+	  right: 0
+	}
+	
+	@media only screen and (max-width: $small) {
+	  left: 0;
+	  right: auto;
+	}
+  }
+  
+  &__author {
+	padding-left: 0;
+	padding-right: 3rem;
+	
+	@media only screen and (max-width: $small) {
+	  padding-left: 0;
+	  padding-right: 2rem;
+	}
+	
+	&::before {
+	  left: auto;
+      right: 0;
+	}
+  }
+}
+
+/* -----------------------------------------------------------------
+    - Preloader
+----------------------------------------------------------------- */
+
+.preloader {
+  &__progress {
+	left: auto;
+	right: 0
+	
+	span {
+	  left: auto;
+      right: 0;
+	}
+  }
+}
+
+/* -----------------------------------------------------------------
+    - Menu
+----------------------------------------------------------------- */
+
+.circle-menu {
+  border-radius: .937rem 50% 50% 50%;
+  left: 0;
+  right: auto;
+
+  @media only screen and (max-width: $small) {
+    border-radius: 50%;
+    margin-left: 1rem;
+	margin-right: 0;
+  }
+}
+ 
+// Hamburger
+.hamburger {
+  .line {
+	&:nth-child(2) {
+	  margin-left: 0;
+	  margin-right: 4px;
+	}
+  }
+  
+  &.is-active .line:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+	
+	@media only screen and (max-width: $medium) {
+	  transform: translateY(6px) rotate(45deg);
+	}
+  }
+}
+
+.inner-menu {
+  padding-left: 2rem;
+  padding-right: 0;
+  left: 0;
+  right: auto;
+
+  
+  @media only screen and (max-width: $small) {
+    padding-left: 0;
+  }
+}
+
+.nav {
+  border-radius: 0 2rem 2rem 0;
+  padding-right: 0;
+  
+  @media only screen and (max-width: $medium) {
+    border-radius: 0 .937rem 2rem 0;
+  }  
+  
+  @media only screen and (max-width: $small) {
+    border-radius: 0;
+  } 
+  
+  &__item {
+    margin-left: 3rem;
+    margin-right: 0;
+	
+	@media only screen and (max-width: $large) {
+	  margin-left: 2rem;
+	  margin-right: 0;
+	}
+	
+	@media only screen and (max-width: $small) {
+	  margin-left: 0;
+	}
+  }
+	
+  &__item:last-child {
+	margin-left: 0;
+	
+	@media only screen and (max-width: $large) {
+	  margin-left: 0;
+	  margin-right: 0;
+	}
+  }  
+}
+
+// Nav alternative
+.inner-menu-alt {
+  padding-left: 0;
+}
+  
+
+/* -----------------------------------------------------------------
+    - Shared
+----------------------------------------------------------------- */
+
+// Social
+.social {
+  &__link {
+	margin-left: 0;
+	margin-right: .5rem;
+  }
+}
+
+/* -----------------------------------------------------------------
+    - Sidebar
+----------------------------------------------------------------- */
+
+// Contacts list
+.contacts-block {
+  padding-right: 0;
+
+  &__item {
+	@media only screen and (max-width: $large-xl) {
+	  margin-left: 1.5rem;
+	  margin-right: 0;
+	}
+  }
+  
+  .font-icon {
+    margin-left: .875rem;
+    margin-right: 0;
+  }
+}
+ 
+/* -----------------------------------------------------------------
+    - Cases
+----------------------------------------------------------------- */
+
+.case-item { 
+  &__icon {
+    margin-left: 1.2rem;
+	margin-right: 0;
+	
+	@media only screen and (max-width: $small) {
+	  margin-left: 1.2rem;
+	  margin-right: 0;
+	}
+  }
+}
+
+/* -----------------------------------------------------------------
+    - Testimonials
+----------------------------------------------------------------- */
+
+.review-item {
+  background-position: left 1.875rem top 1.875rem;
+
+  @media only screen and (max-width: $small) {
+	background-position: left 1rem top 1rem;
+  }
+
+  .title {
+    margin-left: 0;
+	margin-right: 5.5rem;
+	
+	@media only screen and (max-width: $small) {
+      margin-right: 0;
+	}
+  }
+}
+
+/* -----------------------------------------------------------------
+    - Timeline
+----------------------------------------------------------------- */
+
+.timeline {
+  padding-left: 0;
+  padding-right: .5rem;
+  
+  &__item {
+    border-left: 0;
+	border-right: 1px solid $gray-200-color;
+    padding-left: 0;
+    padding-right: 1.4rem;
+	
+	&::before {
+	  left: auto;
+	  right: -5px;
+	}
+  }
+}
+
+/* -----------------------------------------------------------------
+    - Progress
+----------------------------------------------------------------- */
+
+.progress {
+  text-align: left;
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) { 
+   .progress-text span:nth-child(2) {
+     float: left;
+   }
+}
+
+/* -----------------------------------------------------------------
+    - Portfolio
+----------------------------------------------------------------- */
+
+.gallery-grid {
+  &__caption {
+    padding-left: 0;
+	padding-right: .2rem;
+  }
+}
+
+// Filter
+@media only screen and (min-width: 769px) {
+  .filter {
+    &__item {
+	  padding-left: 1.2rem;
+      padding-right: 0;
+	
+	  &:last-child {
+	    padding-left: 0;
+	  }
+    }
+  }
+}
+
+@media only screen and (max-width: $medium) {
+  .select {
+    padding-left: 1.2rem;
+	padding-right: 1.5rem; 
+    text-align: right;
+  
+    .placeholder {
+      &:after {
+        left: 2px;
+        right: auto;
+      }
+    }
+
+    ul {
+      left: auto;
+      right: 0;
+	   
+      li {
+        text-align: right;
+      }
+    }
+  }
+}
+
+/* -----------------------------------------------------------------
+    - News
+----------------------------------------------------------------- */ 
+
+.news-item {
+  &__date {
+    border-radius: 10px 0 0 0;
+  }
+}
+
+/* -----------------------------------------------------------------
+    - Single post
+----------------------------------------------------------------- */ 
+
+.footer-post {
+  &__share {
+	.font-icon {
+	  margin-left: .7rem;
+	  margin-right: 0;
+	}
+  }
+}
+
+// Comments
+.comment-box {
+  .comment-box {
+    margin-left: 0;
+	margin-right: 3rem;
+	
+	@media only screen and (max-width: $small) {
+      margin-left: 0;
+	  margin-right: 1.2rem;
+    }
+  }
+  
+  &__inner {
+    padding: 1.25rem 1.4rem 1.0rem 1.25rem;
+	
+	@media only screen and (max-width: $small) {
+	  padding: 1rem 1.1rem .6rem 1rem;
+	}
+  }
+  
+  .avatar {
+    margin-left: 1rem;
+    margin-right: 0;
+  }
+  
+  &__footer {
+	li {
+	  margin-left: 2rem;
+	  margin-right: 0;
+	  
+	  @media only screen and (max-width: $small) {
+	    margin-left: 1rem;
+		margin-right: 0;
+	  }
+	  
+	  &:last-child {
+		margin-left: 0;
+      }	  
+	}
+	
+	span {
+	  padding-left: 0;
+	  padding-right: .4rem;
+	}	
+  }
+}
+
+// Comment form
+.comment-form {
+  .textarea {
+	padding: 1.1rem 3.2rem 1rem 4.5rem;
+  }
+  
+  .btn {
+    margin-left: .5rem;
+    margin-right: 0;
+    left: 0;
+    right: auto;
+  }
+  
+  .dropdown {
+	margin-left: 0;
+    margin-right: 1rem;
+	
+	&-menu {
+	  margin-left: 0;
+	  margin-right: -1rem;
+	  transform: translate3d(0, -123px, 0px)!important;
+	}
+  } 
+}
+
+// Social auth
+.social-auth {
+  &__item {
+    margin-left: .4rem;
+	margin-right: 0;
+  }
+}
+
+/* -----------------------------------------------------------------
+    - Contact
+----------------------------------------------------------------- */
+
+#contact-form .text-right {
+  text-align: left!important;
+}
+
+#contact-form .text-md-left {
+  @media only screen and (min-width: $medium) {
+    text-align: right!important;
+  }
+}
+
+/* -----------------------------------------------------------------
+    - Other
+----------------------------------------------------------------- */ 
+
+// Bact to top
+.back-to-top {
+  left: 40px;
+  right: auto;
+}

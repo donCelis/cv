@@ -1,0 +1,117 @@
+/* -----------------------------------------------------------------
+    - News
+----------------------------------------------------------------- */ 
+
+.news-grid {
+  @include flex($wrap: wrap);
+  margin-left: rem(-15px);
+  margin-right: rem(-15px);
+  
+  @media only screen and (max-width: $large) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+.news-item {
+  box-shadow: 0 rem(24px) rem(40px) rgba(169, 194, 209, 0.3);
+  margin-bottom: rem(30px);
+  margin-left: rem(15px);
+  margin-right: rem(15px);
+  padding: 0;
+  width: calc(50% - 30px);
+  
+  @media only screen and (max-width: $large) {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+  
+  @media only screen and (max-width: $small) {
+    margin-bottom: rem(20px);
+  }
+  
+  &:hover .news-item__image-wrap::before,
+  &:hover .news-item__image-wrap::after {
+    opacity: 1;
+  }
+  
+  &:hover {
+    box-shadow: 0 rem(12px) rem(20px) rgba(169, 194, 209, 0.2);
+  }
+  
+  &__image-wrap {
+    overflow: hidden;
+	border-radius: $border-rounded-20 $border-rounded-20 0 0;
+	height: rem(224px);
+	position: relative;
+	
+	@media only screen and (max-width: $large) {
+	  height: rem(288px);
+	}
+	
+	@media only screen and (max-width: $small) {
+	  border-radius: $border-rounded-16 $border-rounded-16 0 0;
+	  height: rem(192px);
+	}
+	
+	&::before {
+	  opacity: 0;
+	  transition: opacity .5s ease-in-out;
+	}
+	
+	&::after {
+	  content: '';
+	  background-image: url('../icons/icon-news.svg');
+	  height: rem(40px);
+	  margin: auto;
+	  opacity: 0;
+	  pointer-events: none;
+	  @include position(absolute, $top: 0, $left: 0, $bottom: 0, $right: 0);
+	  transition: opacity .5s ease-in-out;
+	  width: rem(40px);
+	  z-index: 2;
+	}
+  }
+  
+  &__date {
+    background-color: $white-color;
+	color: $gray-400-color;
+	border-radius: 0 rem(10px) 0 0;
+	font-size: rem(14px);
+	padding-left: rem(13px);
+    padding-right: rem(13px);
+    padding-bottom: rem(3px);
+    padding-top: rem(5px);
+	@include position(absolute, $bottom: 0);
+	z-index: 2;
+  }
+  
+  &__link {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+  }
+  
+  &__caption {
+    padding: rem(30px) rem(30px) rem(8px);
+	
+	@media only screen and (max-width: $small) {
+	  padding: rem(19px) rem(16px) 0;
+	}
+  }
+  
+  .title {
+    font-family: $font-additional;
+  }
+  
+  p {
+    color: $gray-400-color;
+	line-height: 1.5;
+	
+	@media only screen and (max-width: $small) {
+	  font-size: rem(15px);
+	}
+  }
+}

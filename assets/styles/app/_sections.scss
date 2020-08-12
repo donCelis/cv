@@ -1,0 +1,300 @@
+/* -----------------------------------------------------------------
+    - Sections
+----------------------------------------------------------------- */
+
+// Container
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1240px;
+  }
+}
+
+@media (min-width: 1300px) {
+  .container {
+    max-width: 1240px;
+  }
+}
+
+// Box
+.box {
+  background-color: $white-color;
+  border-radius: $border-rounded-20;
+  padding: rem(30px);
+  position: relative;
+  transition: box-shadow .3s ease-in-out;
+  
+  @media only screen and (max-width: $small) {
+    border-radius: $border-rounded-16;
+    padding: rem(20px);
+  }
+  
+  &__second {
+    background-color: $white-color;
+    border-radius: #{$border-rounded-20 / 1.3};
+	
+	@media only screen and (max-width: $small) {
+	  border-radius: #{$border-rounded-20 / 1.3};
+	}
+  }
+  
+  &__large {
+    padding: rem(30px) rem(40px);
+	
+	@media only screen and (max-width: $large) {
+	  padding: rem(30px);
+	}
+	
+    @media only screen and (max-width: $small) {
+      padding: rem(20px);
+    }	
+	
+	.box-inner::before,
+    .box-inner::after {
+	  width: rem(40px);
+	  
+	  @media only screen and (max-width: $large) {
+	    width: rem(30px);
+	  }
+	  
+	  @media only screen and (max-width: $small) {
+	    width: rem(20px);
+	  }
+	}
+
+	.box-inner::before {
+	  left: rem(-40px);
+	  
+	  @media only screen and (max-width: $large) {
+	    left: rem(-30px);
+	  }
+	  
+	  @media only screen and (max-width: $small) {
+	    left: rem(-20px);
+	  }
+	}
+	
+    .box-inner::after {
+	  right: rem(-40px);
+	  
+	  @media only screen and (max-width: $large) {
+	    right: rem(-30px);
+	  }
+	  
+	  @media only screen and (max-width: $small) {
+	    right: rem(-20px);
+	  }	  
+	}	
+  }
+}
+
+.box-inner {
+  background-color: $gray-100-color;
+  padding-top: rem(32px);
+  padding-bottom: rem(32px);
+  position: relative;
+  z-index: 0;
+  
+  @media only screen and (max-width: $small) {
+    padding-top: rem(19px);
+    padding-bottom: rem(16px); 
+  }
+  
+  &::before,
+  &::after {
+    content: '';
+	background-color: $gray-100-color;
+	height: 100%;
+	@include position(absolute, $top: 0);
+	width: rem(30px);
+	z-index: -1;
+	
+	@media only screen and (max-width: $small) {
+	  width: rem(20px);
+	}
+  }
+	
+  &::before {
+	left: rem(-30px);
+	
+	@media only screen and (max-width: $small) {
+	  left: rem(-20px);
+	}
+  }
+	
+  &::after {
+	right: rem(-30px);
+	
+	@media only screen and (max-width: $small) {
+	  right: rem(-20px);
+	}
+  }
+  
+  &--rounded {
+    &::before {
+	  border-radius: 0 0 0 $border-rounded-20;
+	}
+	
+    &::after {
+      border-radius: 0 0 $border-rounded-20 0;
+    }
+	
+	@media only screen and (max-width: $small) {
+	  &::before {
+	    border-radius: 0 0 0 $border-rounded-16;
+	  }
+	
+      &::after {
+        border-radius: 0 0 $border-rounded-16 0;
+      }
+	}
+  }
+  
+  &--white {
+    background-color: $white-color;
+	
+    &::before,
+    &::after {
+	  background-color: $white-color;
+	}
+  }
+}
+
+// Shadows
+.shadow {
+  box-shadow: 0 rem(40px) rem(50px) rgba(103, 118, 128, 0.1)!important;
+
+  &::before {
+    content: '';
+	box-shadow: 0 rem(30px) rem(50px) rgba(103, 118, 128, 0.2);
+	@include position(absolute, $left: 0, $bottom: 0, $right: 0);
+	margin: 0 auto;
+	height: rem(32px);
+	width: 65%;
+	z-index: -1;
+  }
+  
+  // orange
+  &--orange {
+    box-shadow: 0 rem(40px) rem(50px) rgba(177, 68, 27, 0.1)!important;
+
+    &::before {
+	  box-shadow: 0 rem(40px) rem(50px) rgba(177, 68, 27, 0.1);
+    }
+  }
+  
+  // green
+  &--green {
+    box-shadow: 0 rem(40px) rem(50px) rgba(0, 115, 97, 0.1)!important;
+
+    &::before {
+	  box-shadow: 0 rem(40px) rem(50px) rgba(0, 115, 97, 0.1);
+    }
+  }   
+}
+
+
+.js-image {
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+}
+
+.gutter-top {
+  padding-top: rem(160px);
+  
+  @media only screen and (max-width: $small) {
+    padding-top: rem(144px);
+  }
+}
+
+// Avatars
+.avatar {
+  display: block;
+  height: 100%;
+  width: 100%;
+  
+  &--180 {
+    $size: rem(180px);
+    max-height: $size;
+    max-width: $size;
+    height: $size;
+    width: $size;
+  }  
+  
+  &--80 {
+    $size: rem(80px);
+    max-height: $size;
+    max-width: $size;
+	filter: drop-shadow(rem(-2.5px) 0 0 $white-color)
+	        drop-shadow(rem(3px) 0 0 $white-color)
+			drop-shadow(0 rem(-2px) 0 $white-color)
+			drop-shadow(0 rem(2px) 0 $white-color)
+			drop-shadow(0 rem(4px) rem(4px) rgba($gray-300-color, .25))
+	        drop-shadow(0 rem(8px) rem(8px) rgba($gray-300-color, .4));
+			
+	@media only screen and (max-width: $small) {
+      max-height: #{$size / 1.5};
+      max-width: #{$size / 1.5};
+    }	
+  }   
+  
+  &--60 {
+    $size: rem(60px);
+    max-height: $size;
+    max-width: $size;
+	filter: drop-shadow(0 rem(4px) rem(4px) rgba($gray-300-color, .2))
+	        drop-shadow(0 rem(8px) rem(8px) rgba($gray-300-color, .2));
+			
+	@media only screen and (max-width: $small) {
+      max-height: #{$size / 1.33};
+      max-width: #{$size / 1.33};
+    }
+  }   
+  
+  &__box {
+    -webkit-clip-path: url(#avatar-box);
+            clip-path: url(#avatar-box);
+  }
+
+  &__hexagon {
+    -webkit-clip-path: url(#avatar-hexagon);
+            clip-path: url(#avatar-hexagon);
+  }
+  
+  image {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+// Social
+.social {
+  line-height: 0;
+  margin-top: rem(24px);
+  margin-bottom: rem(22px);
+  
+  @media only screen and (min-width: $small) {
+    margin-top: rem(18px);
+    margin-bottom: rem(16px);
+  }
+  
+  &__link {
+    color: $black-color;
+    display: inline-block;
+    font-size: rem(20px);
+    margin: 0 rem(10px);
+    text-decoration: none;
+	
+    &:hover {
+      cursor: pointer;
+      text-decoration: none;
+    }
+  }
+}
+
+.pt-sm-6 {
+  @media only screen and (min-width: $small) {
+    padding-top: rem(80px);
+  }
+}

@@ -1,0 +1,370 @@
+/* -----------------------------------------------------------------
+    - Form
+----------------------------------------------------------------- */
+
+// Input Text
+%formStyle {
+  background-color: $gray-100-color;
+  border: 1px solid $gray-100-color;
+  border-radius: $border-rounded-20;
+  box-shadow: none;
+  color: $black-color;
+  font-size: inherit;
+  height: auto;
+  padding: rem(14px) rem(22px) rem(13px);
+  position: relative;
+  width: 100%;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+		  
+  @media only screen and (max-width: $small) {
+    padding: rem(13px) rem(22px) rem(12px);
+  }  
+}
+
+%formStyle-focus {
+  background-color: $gray-100-color;
+  color: $black-color;
+  box-shadow: none;
+  outline: none;
+}
+
+.input {
+  @extend %formStyle;
+  line-height: inherit;
+  
+  &:focus {
+    @extend %formStyle-focus;
+  }
+  
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    line-height: 0;
+  }
+  
+  &--white {
+    background-color: $white-color;
+	
+	&:focus {
+	  background-color: $white-color;
+	}
+  }
+  
+  &__icon {
+    padding-left: rem(54px);
+	
+	@media only screen and (max-width: $small) {
+	  padding-left: rem(45px);
+	}
+  }
+}
+
+.textarea {
+  @extend %formStyle;
+  border-radius: $border-rounded-20;
+  display: block;
+  padding: rem(13px) rem(19px);
+  resize: none;
+  
+  &:focus {
+    @extend %formStyle-focus;
+  }
+  
+  &--white {
+    background-color: $white-color;
+	
+	&:focus {
+	  background-color: $white-color;
+	}
+  }  
+}
+
+.form-group {
+  margin-bottom: rem(32px);
+  position: relative;
+  
+  @media only screen and (max-width: $small) {
+    margin-bottom: rem(27px);
+  }
+  
+  .font-icon {
+    color: $gray-300-color;
+	font-size: rem(17px);
+    margin: auto 0;
+	@include position(absolute, $top: 0, $left: rem(38px), $bottom: 0);
+	height: rem(16px);
+	width: rem(16px);
+	z-index: 1;
+	
+	@media only screen and (max-width: $small) {
+	  font-size: rem(16px);
+	  left: rem(33px);
+	}
+  }
+}
+
+.help-block {
+  position: absolute;
+  font-size: rem(12px);
+  line-height: 1.4;
+  padding-top: rem(5px);
+  padding-left: rem(6px);
+  
+  @media only screen and (max-width: $small) {
+    font-size: rem(11px);
+  }
+}
+
+.with-errors {
+  color: $red-color;
+}
+
+.has-error input,
+.has-error textarea,
+.has-error input:focus,
+.has-error textarea:focus {
+  border-color: $red-color;
+}
+
+#validator-contact {
+  font-size: rem(14px);
+  margin-top: rem(16px);
+}
+
+.form-control::-webkit-input-placeholder {
+  color: $gray-300-color;
+}
+
+.form-control::-moz-placeholder {
+  color: $gray-300-color;
+}
+
+.form-control:-ms-input-placeholder {
+  color: $gray-300-color;
+}
+
+.form-control::-ms-input-placeholder {
+  color: $gray-300-color;
+}
+
+.form-control::placeholder {
+  color: $gray-300-color;
+}
+
+input:invalid,
+textarea:invalid {
+  outline: none !important;
+}
+
+// Checkbox
+.custom-control-input {
+  &:focus ~ .custom-control-label::before {
+    box-shadow: 0 0 0 rem(2px) rgba($tone-color, 0.25);
+  }
+
+  &:focus:not(:checked) ~ .custom-control-label::before {
+    border-color: $tone-color;
+  }
+
+  &:not(:disabled):active~.custom-control-label::before {
+    border-color: $white-color;
+    background-color: transparent;
+  }
+  
+  &:checked~.custom-control-label::before {
+    border-color: $tone-color;
+    background-color: $tone-color;
+  }
+}
+
+.custom-control-label {
+  line-height: 1.55;
+  padding-left: rem(8px);
+  
+  &::before {
+    background-color: transparent;
+    border: 1px solid $gray-200-color;
+  }	
+}
+
+// Select
+select,
+.custom-select {
+  @extend %formStyle;
+  background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3e%3cpath fill='%23fff' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e") no-repeat right 0.1rem center/10px 16px;
+  
+  &:focus {
+    @extend %formStyle-focus;
+  }
+  
+  option {
+    color: $black-color;
+  }
+}
+
+// Dropdown
+.dropdown {
+  &-menu {
+    border: 0;
+    border-radius: $border-rounded-10;
+    box-shadow: 0 rem(8px) rem(40px) rgba($gray-300-color, .25);
+    color: $gray-400-color;
+    font-size: rem(15px);
+	
+	&::before {
+	  content: '';
+	  border-left: rem(6px) solid transparent;
+      border-right: rem(6px) solid transparent;
+      border-bottom: rem(6px) solid $white-color;
+	  height: 0;
+	  @include position(absolute, $top: rem(-6px), $left: rem(17px));
+	  width: 0;
+	}
+  }
+  
+  &.dropup {
+    .dropdown-menu {
+      &::before {
+	    border-left: rem(6px) solid transparent;
+        border-right: rem(6px) solid transparent;
+	    border-top: rem(6px) solid $white-color;
+        border-bottom: rem(6px) solid transparent;
+	    top: auto;
+	    bottom: rem(-12px);
+	  }
+	}  
+  }
+}
+
+// Progress
+.progress {
+  background-color: $gray-200-color;
+  border-radius: rem(16px);
+  height: rem(24px);
+  margin-bottom: rem(24px);
+  overflow: inherit;
+  position: relative;
+  text-align: right;
+  
+  @media only screen and (max-width: $small) {
+    margin-bottom: rem(16px);
+  }
+  
+  &:last-child {
+    margin-bottom: 0;
+  }
+  
+  &-bar {
+    background-color: $tone-color;
+	border-radius: rem(16px);
+	overflow: hidden;
+	position: relative;
+	width: 0%;
+	z-index: 1;
+  }
+  
+  .progress-text {
+    @include flex($align: center, $justify: space-between);
+	height: 100%;
+	padding-left: rem(13px);
+	padding-right: rem(13px);
+	@include position(absolute, $top: 0, $left: 0);
+	width: 100%;
+	z-index: 1;
+  }
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) { 
+  .progress-text span:nth-child(2) {
+    float: right;
+  }
+}
+
+// Badges
+.badge {
+  font-size: rem(15px);
+  font-weight: $weight-400;
+  border-radius: rem(160px);
+  padding: rem(8px) rem(16px);
+  
+  @media only screen and (max-width: $small) {
+    font-size: rem(14px);
+  }
+  
+  &--light {
+    background-color: $gray-50-color;
+	color: $black-color;
+  }
+
+  &--gray {
+    background-color: $gray-200-color;
+	color: $black-color;
+  }
+  
+  &--dark {
+    background-color: $black-color;
+	color: $white-color;
+  } 
+ 
+  &--blue {
+    background-color: $tone-color;
+	color: $white-color;
+  }
+  
+  &--blue-gradient {
+    background-image: $gradient-1;
+	color: $white-color;
+  }  
+  
+  &--aqua {
+    background-color: $tone-additional-color;
+	color: $white-color;
+  }  
+  
+  &--red {
+    background-color: $red-color;
+	color: $white-color;
+  }
+}
+
+// Tooltips
+.tooltip {
+  font-family: $font-body;  
+  
+  &-inner {
+    max-width: rem(200px);
+    padding: rem(4px) rem(9px) rem(4px);
+    background-color: $black-color;
+    border-radius: rem(4px);
+	box-shadow: 0 rem(16px) rem(32px) rgba($gray-300-color, .25), 
+                0 rem(2px) rem(16px) rgba($gray-300-color, .5);
+  }
+  
+  &.show {
+    opacity: 1;
+  }
+}
+
+.bs-tooltip-top .arrow::before, 
+.bs-tooltip-auto[x-placement^="top"] .arrow::before {
+  border-width: rem(5px) rem(5px) 0;
+  border-top-color: $black-color;
+}
+
+.bs-tooltip-right .arrow::before, 
+.bs-tooltip-auto[x-placement^="right"] .arrow::before {
+  border-width: rem(5px) rem(5px) rem(5px) 0;
+  border-right-color: $black-color;
+}
+
+.bs-tooltip-left .arrow::before, 
+.bs-tooltip-auto[x-placement^="left"] .arrow::before {
+  border-width: rem(5px) 0 rem(5px) rem(5px);
+  border-left-color: $black-color;
+}
+
+.bs-tooltip-bottom .arrow::before, 
+.bs-tooltip-auto[x-placement^="bottom"] .arrow::before {
+  border-width: 0 rem(5px) rem(5px);
+  border-bottom-color: $black-color;
+}

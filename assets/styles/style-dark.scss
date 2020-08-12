@@ -1,0 +1,749 @@
+$version: "1.0.2";
+
+/* ------------------------------------------------
+ Author: ArtStyles (Art)
+ 
+ Template Name: vCard
+ version: #{$version}
+------------------------------------------------ */
+
+/* ------------------------------------------------
+
+ - General Styles
+   - Input Text
+   - Checkbox
+   - Select
+   - Dropdown
+   
+ - Typography
+ - Preloader
+ 
+ - Shared
+   - Box
+   - Avatars
+   - Social
+   - Badges
+   - Tooltips
+   
+ - Sidebar
+   - Contact list
+   
+ - Cases
+
+ - Testimonials
+   - Carousel pagination
+   
+ - Clients
+ - Timeline
+ - Progress
+ 
+ - Portfolio
+   - Filter
+    
+ - News
+ 
+ - Single post
+   - Comments
+   - Comment form
+   - Emoji
+   - niceScroll
+   - Social auth
+
+ - Other
+   - Bact to top
+   - Medium Zoom
+  
+------------------------------------------------ */
+
+// Variables
+@import 'variables/vars';
+@import 'variables/mixins';
+@import 'variables/media';
+
+
+/* -----------------------------------------------------------------
+    - General Styles
+----------------------------------------------------------------- */
+
+body {
+  background-color: $dark-black-1;
+  color: $gray-body;
+}
+
+// Input Text
+%formStyle {
+  background-color: $dark-black-3;
+  border: 1px solid $dark-black-3;
+  color: $white-color;
+}
+
+%formStyle-focus {
+  background-color: $dark-black-1;
+  border: 1px solid $dark-tone-color;
+  color: $white-color;
+}
+
+.input {
+  @extend %formStyle;
+  
+  &:focus {
+    @extend %formStyle-focus;
+  }
+  
+  &--white {
+    background-color: $dark-black-3;
+	
+	&:focus {
+	  background-color: $dark-black-3;
+	}
+  }
+}
+
+.textarea {
+  @extend %formStyle;
+  
+  &:focus {
+    @extend %formStyle-focus;
+  }
+  
+  &--white {
+    background-color: $dark-black-3;
+	
+	&:focus {
+	  background-color: $dark-black-3;
+	}	
+  }
+}
+
+.form-group {
+  .font-icon {
+    color: rgba($gray-body,.5);
+  }
+}
+
+.form-control::-webkit-input-placeholder {
+  color: rgba($gray-body,.5);
+}
+
+.form-control::-moz-placeholder {
+  color: rgba($gray-body,.5);
+}
+
+.form-control:-ms-input-placeholder {
+  color: rgba($gray-body,.5);
+}
+
+.form-control::-ms-input-placeholder {
+  color: rgba($gray-body,.5);
+}
+
+.form-control::placeholder {
+  color: rgba($gray-body,.5);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-text-fill-color: $dark-black-3!important;
+}
+
+// Checkbox
+.custom-control-input {
+  &:focus ~ .custom-control-label::before {
+    box-shadow: 0 0 0 rem(2px) rgba($dark-tone-color, 0.25);
+  }
+  
+  &:focus:not(:checked) ~ .custom-control-label::before {
+    border-color: $dark-tone-color;
+  }
+  
+  &:not(:disabled):active~.custom-control-label::before {
+    border-color: $gray-300-color;
+  }
+  
+  &:checked~.custom-control-label::before {
+    border-color: $dark-tone-color;
+    background-color: $dark-tone-color;
+  }
+}
+
+.custom-control-label {
+  &::before {
+    border: 1px solid $gray-300-color;
+  }	
+}
+
+// Select
+select,
+.custom-select {
+  @extend %formStyle;
+  background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3e%3cpath fill='%23fff' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e") no-repeat right 0.1rem center/10px 16px;
+  
+  &:focus {
+    @extend %formStyle-focus;
+  }
+  
+  option {
+    color: $white-color;
+  }
+}
+
+// Dropdown
+.dropdown {
+  &-menu {
+    background-color: $dark-black-2;
+    box-shadow: 0 8px 40px rgba($absolute-black, .5);
+    color: $gray-body;
+	
+	&::before {
+      border-bottom: .4rem solid $dark-black-2;
+	}
+  }
+  
+  &.dropup {
+    .dropdown-menu {
+      &::before {
+	    border-top: .4rem solid $dark-black-2;
+	  }
+	}  
+  }
+}
+
+// Progress
+.progress {
+  background-color: $dark-black-2;
+  
+  &-bar {
+    background-color: $dark-tone-color;
+  }
+}
+
+// Badges
+.badge {
+  &--blue {
+    background-color: $dark-tone-color;
+  }
+}
+
+// Badges
+.badge {
+  &--dark {
+    background-color: $dark-black-1;
+  }
+}
+
+// Tooltips
+.tooltip {
+  &-inner {
+    background-color: $dark-black-2;
+	box-shadow: 0px 16px 48px rgba($absolute-black, .25), 
+                0px 2px 32px rgba($absolute-black, .5);
+  }
+}
+
+.bs-tooltip-top .arrow::before, 
+.bs-tooltip-auto[x-placement^="top"] .arrow::before {
+  border-top-color: $dark-black-2;
+}
+
+.bs-tooltip-right .arrow::before, 
+.bs-tooltip-auto[x-placement^="right"] .arrow::before {
+  border-right-color: $dark-black-2;
+}
+
+.bs-tooltip-left .arrow::before, 
+.bs-tooltip-auto[x-placement^="left"] .arrow::before {
+  border-left-color: $dark-black-2;
+}
+
+.bs-tooltip-bottom .arrow::before, 
+.bs-tooltip-auto[x-placement^="bottom"] .arrow::before {
+  border-bottom-color: $dark-black-2;
+}
+
+// Button
+.btn {
+  background-color: $dark-tone-color;
+  box-shadow: 0 rem(8px) rem(16px) rgba($dark-tone-color, .15), 
+              0 rem(2px) rem(4px) rgba($dark-tone-color, .15);
+			  
+  &:focus {
+    box-shadow: 0 rem(24px) rem(40px) rgba($dark-tone-color, .1), 
+                0 rem(8px) rem(16px) rgba($dark-tone-color, .1);
+  }
+  
+  &::before {
+    content: '';
+	box-shadow: 0 rem(4px) rem(32px) rgba($dark-tone-color, .25),
+	            0 rem(4px) rem(16px) rgba($dark-tone-color, .25);
+  }
+}
+  
+/* -----------------------------------------------------------------
+    - Typography
+----------------------------------------------------------------- */
+
+.title {
+  color: $gray-header;
+  
+  &--tone {
+    color: $dark-tone-color;
+  }
+  
+  &__separate {
+    &::before {
+	  background-color: $dark-tone-color;
+    }
+  }
+}
+
+.color {
+  &--light {
+    color: rgba($gray-header,.5);
+  } 
+}
+
+.block-quote {
+  &::before {
+    background-image: url('../icons/dark/icon-quote.svg');
+  }
+  
+  &__author {
+	&::before {
+	  background-color: $gray-200-color;
+	}
+  }
+}
+
+a {
+  color: $dark-tone-color;
+  
+  &:hover {
+    color: $dark-tone-color;
+  }
+}
+
+::-moz-selection {background: $dark-black-2; color: $dark-tone-color;}
+	 ::selection {background: $dark-black-2; color: $dark-tone-color;} 
+	 
+/* -----------------------------------------------------------------
+    - Preloader
+----------------------------------------------------------------- */
+
+.preloader {
+  background-color: $dark-black-1;
+  
+  &__progress {
+    span {
+	  background: $dark-tone-color;
+	}
+  }
+}
+
+.circle-pulse__1 {
+  background-color: $dark-tone-color;
+}
+
+.circle-pulse__2 {
+  background-color: rgba($dark-tone-color,.7);
+}
+
+/* -----------------------------------------------------------------
+    - Sidebar
+----------------------------------------------------------------- */
+
+// Contact list
+.contacts-block {
+  margin-bottom: 1rem;
+  
+  &__item {
+	a {
+	  color: $gray-body;
+	  
+	  &:hover {
+	    color: $dark-tone-color;
+	  }
+	}
+  }
+}
+
+/* -----------------------------------------------------------------
+    - Sections
+----------------------------------------------------------------- */
+
+// Box
+.box {
+  background-color: $dark-black-2;
+  
+  &__second {
+    background-color: $dark-black-3;
+  }
+}
+
+.box-inner {
+  background-color: transparent;
+  padding-top: .7rem;
+  
+  &::before,
+  &::after {
+	background-color: transparent;
+  }
+}
+
+// Shadows
+.shadow {
+  box-shadow: 0px 40px 50px rgba(32, 29, 42, 0.75)!important;
+
+  &::before {
+	box-shadow: 0px 40px 50px rgba(32, 29, 42, 0.75);
+  }   
+}
+
+// Avatars
+.avatar {
+  &--180 {
+	filter: drop-shadow(0px 24px 24px rgba(32, 29, 42, 0.7));
+  }  
+  
+  &--80 {
+	filter: drop-shadow(0px 8px 24px rgba(32, 29, 42, 0.75))
+	        drop-shadow(0px 4px 4px rgba(32, 29, 42, 0.75));
+  }   
+  
+  &--60 {
+	filter: drop-shadow(0px 8px 24px rgba(32, 29, 42, 0.75))
+	        drop-shadow(0px 4px 4px rgba(32, 29, 42, 0.75));
+  }   
+}
+
+// Social
+.social {
+  &__link {
+    color: $white-color;
+  }
+}
+
+/* -----------------------------------------------------------------
+    - Navbar
+----------------------------------------------------------------- */
+
+$size-nav: rem(60px);
+
+.circle-menu {
+  background-color: $dark-tone-color;
+  
+  .open-menu & {
+    @media only screen and (max-width: $small) {
+	  box-shadow: 0 0 0 rem(1px) rgba($dark-tone-color, .5);
+	}
+  }
+}
+ 
+// Hamburger
+.hamburger {
+  &.is-active .line {
+    @media only screen and (max-width: $small) {
+	  background-color: $dark-tone-color;
+	}
+  }
+}
+
+
+.nav {
+  background: $dark-tone-color;
+  box-shadow: 0 rem(24px) rem(40px) rgba($dark-tone-color, .05), 
+              0 rem(8px) rem(16px) rgba($dark-tone-color, .05);
+			  
+  @media only screen and (max-width: $small) {
+    color: $white-color;
+    background-color: $dark-black-2;
+  }
+  
+  &__item {
+	a {
+	  @media only screen and (max-width: $small) {
+	    color: rgba($white-color,.5);
+	  
+	    &:hover {
+	      color: rgba($white-color,1);
+	    }
+	  }
+	  
+	  &.active {
+		@media only screen and (max-width: $small) {
+		  color: $white-color;
+		}
+	  }
+	}
+  } 
+}
+
+/* -----------------------------------------------------------------
+    - Cases
+----------------------------------------------------------------- */
+
+.case-item {
+  &__caption {
+    color: $gray-body;
+  }
+}
+
+/* -----------------------------------------------------------------
+    - Testimonials
+----------------------------------------------------------------- */
+
+.review-item {
+  background-color: $dark-black-3;
+  background-image: url('../icons/dark/icon-quote.svg');
+  
+  &__caption {
+    color: $gray-body;
+  }
+}
+
+.swiper-pagination-bullet {
+  background: $dark-black-1;
+  
+  &__item {
+	&::before {
+	  background-color: $dark-tone-color;
+	  box-shadow: 0 0 0 rem(3px) rgba($dark-tone-color,.25);
+	}
+  }
+  
+  &-active {
+    background: $dark-tone-color;
+  }
+}
+
+/* -----------------------------------------------------------------
+    - Timeline
+----------------------------------------------------------------- */
+
+.timeline {
+
+  &__item {
+    border-left: 1px solid rgba($white-color, .15);
+	
+	&::before {
+	  content: '';
+	  background-color: $dark-tone-color;
+	  box-shadow: 0 0 0 rem(3px) rgba($dark-tone-color,.25);
+	}
+  }
+  
+  &__period {
+    color: rgba($gray-body,.5);
+  }
+}
+
+/* -----------------------------------------------------------------
+    - Portfolio
+----------------------------------------------------------------- */
+
+.gallery-grid {
+  &__category {
+	color: rgba($gray-body,.5);
+  }
+}
+
+// Filter
+@media only screen and (min-width: 769px) {
+  .filter {
+    &__link {
+	  color: rgba($gray-body,.5);
+    }
+	
+    &__item {
+	  &.active a {
+	    color: $dark-tone-color;
+	  }
+    }	
+  }
+}
+
+@media only screen and (max-width: $medium) {
+  .select {
+    background-color: $dark-black-1;
+	color: $gray-body;
+
+    ul {
+	  background-color: $dark-black-2;
+	  box-shadow: 0 10px 60px rgba($absolute-black,.25);
+	   
+      li {
+        color: $gray-body;
+	    
+		&:hover {
+          background-color: rgba($dark-tone-color,1);
+        }
+		
+	    a {
+		  color: $gray-body;
+	    }
+      }
+    }
+  }
+}
+
+/* -----------------------------------------------------------------
+    - News
+----------------------------------------------------------------- */ 
+
+.news-item {
+  background-color: $dark-black-3;
+  box-shadow: none;
+  
+  &:hover {
+    box-shadow: none;
+  }  
+  
+  &__date {
+    background-color: $dark-black-3;
+	color: $gray-body;
+  }
+
+  p {
+    color: $gray-body;
+  }
+}
+
+
+/* -----------------------------------------------------------------
+    - Single post
+----------------------------------------------------------------- */ 
+
+.header-post {
+  &__date {
+    color: rgba($gray-body,.7);
+  }
+}
+
+.caption-post {
+  p {
+    color: $gray-body;
+  }
+}
+
+.gallery-post {
+  &__caption {
+    color: rgba($gray-body,.7);
+
+	a {
+	  color: rgba($gray-body,1);
+	}
+  }
+}
+
+.footer-post {
+  &::before {
+	background-color: rgba($white-color,.6);
+  }
+  
+  &__share {
+    color: $white-color;
+  }
+}
+
+// Comments
+.comment-box {
+  &__inner {
+    background-color: $dark-black-3;
+  }
+  
+  &__body {
+    color: $gray-body;
+  }
+  
+  &__details {
+    color: $white-color;
+  }
+  
+  &__details-date {
+	color: rgba($gray-body,.3);
+  }
+  
+  &__footer {
+    color: rgba($gray-body,.5);
+	
+	li {
+	  &:hover {
+	    color: $dark-tone-color;
+	  }
+	}
+  }  
+}
+
+// Comment form
+.comment-form {
+  .icon-smile {
+    color: rgba($gray-body,.5);
+	
+	&:hover {
+	  color: $gray-body;
+	}
+  }  
+}
+
+// Scroll Indicator
+.scroll-line{
+  background: $dark-tone-color;
+}
+
+// Emoji
+.emoji-wrap {
+  .emoji {
+    &:hover {
+	  box-shadow: 0 0 0px 2px rgba($white-color, .2);
+	}	
+  }
+}
+
+// niceScroll
+.nicescroll-cursors {
+  background-color: rgba($white-color,.2)!important;
+  border-color: transparent!important;
+}
+
+// Social auth
+.social-auth {
+  .font-icon {
+    background-color: $dark-tone-color;
+  }
+  
+  .icon-facebook {
+    background-color: #3B5998;
+  }
+  
+  .icon-twitter {
+    background-color: #55ACEE;
+  }
+  
+  .icon-dribbble {
+    background-color: #F26798;
+  }
+  
+  .icon-behance {
+    background-color: #4176FA;
+  }  
+}
+
+/* -----------------------------------------------------------------
+    - Other
+----------------------------------------------------------------- */ 
+
+.mapboxgl-popup-content {
+  color: $black-color;
+}
+
+// Bact to top
+.back-to-top {
+  border-top: 1px solid $white-color;
+  border-left: 1px solid $white-color;
+}
+
+// Medium Zoom
+.medium-zoom-overlay {
+  background: $dark-black-1!important;
+}

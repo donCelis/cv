@@ -1,0 +1,67 @@
+/* -----------------------------------------------------------------
+    - Preloader
+----------------------------------------------------------------- */
+
+.preloader {
+  @include flex($align: center, $justify: center);
+  background-color: $white-color;
+  @include position(fixed, $top: 0, $left: 0);
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  text-align: center;
+  z-index: 1106;
+  opacity: 1;
+
+  &__wrap {
+    width: 100%;
+	max-width: rem(150px);
+  }
+
+  &__progress {
+    background: $white-color;
+    height: rem(2px);
+	@include position(absolute, $top: 0, $left: 0);
+	overflow: hidden;
+	width: 100%;
+	
+	span {
+	  background: $tone-color;
+	  @include position(absolute, $top: 0, $left: 0);
+	  height: 100%;
+	  width: 0;
+	}
+  }
+}
+
+$circle-pulse-size: rem(96px);
+
+.circle-pulse > * {
+  @include position(absolute, $top: 50%, $left: 50%);
+  border-radius: 50%;
+  box-sizing: border-box;
+  transform: scale(0);
+  animation: pulse 1.6s linear infinite;
+}
+
+.circle-pulse__1 {
+  width: $circle-pulse-size;
+  height: $circle-pulse-size;
+  margin-top: -$circle-pulse-size / 2;
+  margin-left: -$circle-pulse-size / 2;
+  background-color: $tone-color;
+}
+
+.circle-pulse__2 {
+  width: $circle-pulse-size * .8;
+  height: $circle-pulse-size * .8;
+  margin-top: -$circle-pulse-size * .8 / 2;
+  margin-left: -$circle-pulse-size * .8 / 2;
+  background-color: rgba($tone-color,.7);
+  animation-delay: -0.8s;
+}
+
+@keyframes pulse {
+  0% {transform: scale(0, 0);opacity:1;}
+  100% {transform: scale(1, 1);opacity:0;}
+}

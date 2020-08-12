@@ -1,0 +1,74 @@
+// Button
+.btn {
+  background-color: $tone-color;
+  border-radius: $border-rounded-20;
+  border: 0;
+  box-shadow: 0 rem(8px) rem(16px) rgba($tone-color, .15), 
+              0 rem(2px) rem(4px) rgba($tone-color, .15);
+  color: $white-color;
+  cursor: pointer;
+  font-size: rem(16px);
+  font-weight: $weight-400;
+  line-height: inherit;
+  padding: rem(15px) rem(32px) rem(14px);
+  position: relative;
+  transition: .4s ease-in-out;
+  white-space: nowrap;
+  
+  &:hover {
+    color: $white-color;
+	box-shadow: none;
+	opacity: .9;
+  }
+  
+  &:focus {
+    box-shadow: 0 rem(24px) rem(40px) rgba($tone-color, .1), 
+                0 rem(8px) rem(16px) rgba($tone-color, .1);
+  }
+  
+  &::before {
+    content: '';
+	box-shadow: 0 rem(4px) rem(32px) rgba($tone-color, .25),
+	            0 rem(4px) rem(16px) rgba($tone-color, .25);
+	margin: 0 auto;
+	height: rem(16px);
+	@include position(absolute, $left: 0, $bottom: 0, $right: 0);
+	transition: .4s ease-in-out;
+	width: 64%;
+	z-index: -1;
+  }
+  
+  &:hover::before {
+    box-shadow: none;
+  }
+  
+  &--light {
+    background-color: $gray-100-color;
+	color: $black-color;
+  }  
+  
+  &--gray {
+    background-color: $gray-200-color;
+	color: $black-color;
+  }  
+  
+  &--dark {
+    background-color: $black-color;
+  }
+  
+  &--blue-gradient {
+    background-size: 200% auto;
+    background-image: $gradient-1;
+  }
+  
+  &--red {
+    background-color: $red-color;
+	color: $white-color;
+  }  
+  
+  .font-icon {
+    margin-right: rem(6px);
+  }
+}
+
+button:focus {outline: none;}

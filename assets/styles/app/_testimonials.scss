@@ -1,0 +1,97 @@
+/* -----------------------------------------------------------------
+    - Testimonials
+----------------------------------------------------------------- */
+
+.swiper-container {
+  .swiper-wrapper {
+    min-height: 100%;
+  }
+}
+
+.review-item {
+  @include flex($direction: column);
+  background-color: $gray-100-color;
+  background-image: url('../icons/icon-quote.svg');
+  background-repeat: no-repeat;
+  background-position: right rem(30px) top rem(30px);
+  border-radius: $border-rounded-20;
+  height: auto;
+  padding: rem(30px) rem(30px) rem(24px);
+  margin-top: rem(40px);
+  
+  @media only screen and (max-width: $small) {
+    background-size: rem(25px);
+	background-position: right rem(16px) top rem(16px);
+    border-radius: #{$border-rounded-20 / 1.5};
+	padding: rem(16px);
+  }
+  
+  &__caption {
+    color: $gray-400-color;
+	line-height: 1.5;
+  }
+  
+  &__caption:last-child {
+    margin-bottom: 0;
+  }
+  
+  .title {
+    font-family: $font-additional;
+	font-size: rem(19px);
+    margin-left: rem(88px);
+	margin-bottom: rem(11px);
+	
+	@media only screen and (max-width: $small) {
+	  font-size: rem(16px);
+      margin-left: 0;
+	  margin-top: rem(8px);
+	  margin-bottom: rem(8px);
+	}
+  }
+  
+  .avatar {
+    @include position(absolute, $top: rem(-38px));
+  }
+}
+
+// Carousel pagination
+.swiper-pagination  {
+  margin-top: rem(24px);
+  position: relative;
+  line-height: 0;
+  
+  @media only screen and (max-width: $small) {
+    margin-top: rem(16px);
+  }
+}
+
+.swiper-pagination-bullet {
+  background: $gray-200-color;
+  border-radius: rem(16px);
+  opacity: 1;
+  height: rem(10px);
+  width: rem(10px);
+  transition: width .3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  
+  @media only screen and (max-width: $small) {
+    height: rem(6px);
+    width: rem(6px);
+  }
+  
+  &-active {
+    background: $tone-color;
+	width: rem(20px);
+	
+	@media only screen and (max-width: $small) {
+	  width: rem(12px);
+	}
+  }
+}
+
+.swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet {
+  margin: 0 rem(5px);
+}
+.swiper-container-horizontal>.swiper-pagination-bullets,
+.swiper-pagination-custom, .swiper-pagination-fraction {
+  bottom: 0;
+}

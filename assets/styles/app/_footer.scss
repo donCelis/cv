@@ -1,0 +1,21 @@
+/* -----------------------------------------------------------------
+    - Footer
+----------------------------------------------------------------- */ 
+
+.footer {
+  color: $gray-300-color;
+  font-size: rem(14px);
+  padding-top: rem(16px);
+  padding-bottom: rem(16px);
+  text-align: center;
+  
+  @media only screen and (max-width: $small) {
+    padding-top: rem(8px);
+    padding-bottom: rem(8px);
+  }
+  
+  .bg-green &,
+  .bg-peach & {
+    color: $white-color;
+  }
+}

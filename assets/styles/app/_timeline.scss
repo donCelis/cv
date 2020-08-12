@@ -1,0 +1,50 @@
+/* -----------------------------------------------------------------
+    - Timeline
+----------------------------------------------------------------- */
+
+.timeline {
+  margin-top: rem(29px);
+  padding-left: rem(8px);
+  
+  &__item {
+    border-left-color: $gray-200-color;
+	border-left-width: 1px;
+	border-left-style: solid;
+    padding-bottom: rem(9px);
+    padding-left: rem(22px);
+    position: relative;
+	
+	&::before {
+	  content: '';
+	  background-color: $tone-color;
+	  box-shadow: 0 0 0 rem(3px) rgba($tone-color,.25);
+	  border-radius: 50%;
+	  @include position(absolute, $top: 0, $left: rem(-5px));
+	  height: rem(10px);
+	  width: rem(10px);
+	}
+	
+	&:last-child {
+	  border: 0;
+	}
+  }
+  
+  &__title {
+    margin-bottom: 0;
+	position: relative;
+	top: rem(-5px);
+  }
+  
+  &__period {
+    color: $gray-300-color;
+    font-size: rem(14px);
+  }
+  
+  &__description {
+	margin-top: rem(8px);
+	
+	@media only screen and (max-width: $small) {
+	  margin-top: rem(3px);
+	}
+  }
+}

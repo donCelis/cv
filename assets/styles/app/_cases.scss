@@ -1,0 +1,49 @@
+/* -----------------------------------------------------------------
+    - Cases
+----------------------------------------------------------------- */
+
+.case-item {
+  @include flex();
+  height: calc(100% - rem(30px));
+  margin-bottom: rem(30px);
+  padding: rem(30px) rem(30px) rem(24px);
+  position: relative;
+  
+  @media only screen and (max-width: $large) {
+    height: calc(100% - rem(20px));
+  }
+  
+  @media only screen and (max-width: $small) {
+    @include flex($align: center, $direction: column);
+    height: calc(100% - rem(20px));
+	margin-bottom: rem(20px);
+	padding: rem(16px);
+	text-align: center;
+  }  
+  
+  &__icon {
+    $size: rem(40px);
+	margin-right: rem(19px);
+	height: $size;
+	width: $size;
+	
+	@media only screen and (max-width: $small) {
+	  margin-right: 0;
+      margin-bottom: rem(13px);
+	}
+  }
+  
+  div {
+    flex: 1;
+  }
+  
+  &__caption {
+    color: $gray-400-color;
+
+	line-height: 1.5;
+  }
+  
+  &__caption:last-child {
+    margin-bottom: 0;
+  }
+}
