@@ -421,7 +421,16 @@ a {
 .social {
   &__link {
     color: $white-color;
+    background: transparent;
+    padding: rem(8px);
+    transition: all ease 0.2s;
+    border-radius: 100%;
+    &:hover{
+      color: white;
+      background: #ffffff4d;
+    }
   }
+  
 }
 
 /* -----------------------------------------------------------------

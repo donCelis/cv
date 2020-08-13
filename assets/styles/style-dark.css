@@ -299,6 +299,14 @@ a:hover {
 
 .social__link {
   color: #fff;
+  background: transparent;
+  padding: 0.5rem;
+  transition: all ease 0.2s;
+  border-radius: 100%;
+}
+.social__link:hover {
+  color: white;
+  background: #ffffff4d;
 }
 
 /* -----------------------------------------------------------------

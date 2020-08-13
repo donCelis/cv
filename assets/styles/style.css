@@ -1276,7 +1276,7 @@ button:focus {
   color: #44566C;
   display: inline-block;
   font-size: 1.25rem;
-  margin: 0 0.625rem;
+  margin: 0 0.3125rem;
   text-decoration: none;
 }
 .social__link:hover {
