@@ -143,10 +143,10 @@ $size-nav: rem(60px);
     @include flex($direction: column, $align: center, $justify: center);
     color: $black-color;
     background-color: $white-color;
-	background-image: none;
+	  background-image: none;
     border-radius: 0;
     box-shadow: none;
-	font-size: rem(24px)
+	  font-size: rem(24px)
   }
   
   &__item {
@@ -163,15 +163,15 @@ $size-nav: rem(60px);
 	}
 	
 	a {
-	  color: rgba($white-color,.7);
+    color: rgba($white-color,.5);
 	  
 	  &:hover {
 	    color: rgba($white-color,1);
-		text-decoration: none;
+		  text-decoration: none;
 	  }
 	  
 	  @media only screen and (max-width: $small) {
-	    color: rgba($black-color,.6);
+	    color: rgba($black-color,.5);
 	  
 	    &:hover {
 	      color: rgba($black-color,1);
@@ -181,9 +181,9 @@ $size-nav: rem(60px);
 	  &.active {
 	    color: $white-color;
 		
-		@media only screen and (max-width: $small) {
-		  color: $black-color;
-		}
+      @media only screen and (max-width: $small) {
+        color: $black-color;
+      }
 	  }
 	}
   }
@@ -191,9 +191,9 @@ $size-nav: rem(60px);
   &__item:last-child {
 	margin-right: 0;
 	
-	@media only screen and (max-width: $small) {
-	  margin-right: 0;
-	}
+    @media only screen and (max-width: $small) {
+      margin-right: 0;
+    }
   }  
 }
 

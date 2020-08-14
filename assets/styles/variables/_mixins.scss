@@ -1,5 +1,11 @@
 // Flexbox
-@mixin flex-variant($display, $direction: false, $align: false, $justify: false, $wrap: false) {
+@mixin flex-variant(
+  $display,
+  $direction: false,
+  $align: false,
+  $justify: false,
+  $wrap: false
+) {
   display: $display;
 
   @if $direction {
@@ -25,11 +31,28 @@
 }
 
 @mixin flex($direction: false, $align: false, $justify: false, $wrap: false) {
-  @include flex-variant(flex, $direction: $direction, $align: $align, $justify: $justify, $wrap: $wrap);
+  @include flex-variant(
+    flex,
+    $direction: $direction,
+    $align: $align,
+    $justify: $justify,
+    $wrap: $wrap
+  );
 }
 
-@mixin inline-flex($direction: false, $align: false, $justify: false, $wrap: false) {
-  @include flex-variant(inline-flex, $direction: $direction, $align: $align, $justify: $justify, $wrap: $wrap);
+@mixin inline-flex(
+  $direction: false,
+  $align: false,
+  $justify: false,
+  $wrap: false
+) {
+  @include flex-variant(
+    inline-flex,
+    $direction: $direction,
+    $align: $align,
+    $justify: $justify,
+    $wrap: $wrap
+  );
 }
 
 // px to rem
@@ -50,7 +73,13 @@
 }
 
 // Position
-@mixin position($position, $top: null, $right: null, $bottom: null, $left: null) {
+@mixin position(
+  $position,
+  $top: null,
+  $right: null,
+  $bottom: null,
+  $left: null
+) {
   position: $position;
   top: $top;
   right: $right;
