@@ -429,11 +429,11 @@ a {
     color: $white-color;
     background: transparent;
     padding: rem(8px);
-    transition: all ease 0.2s;
+    transition: background ease 0.2s;
     border-radius: 100%;
     &:hover {
       color: white;
-      background: #ffffff4d;
+      background: rgba($white-color, 0.3);
     }
   }
 }
@@ -749,9 +749,8 @@ $size-nav: rem(60px);
 }
 
 // Bact to top
-.back-to-top {
-  border-top: 1px solid $white-color;
-  border-left: 1px solid $white-color;
+.back-to-top:hover{
+  background: rgba($white-color, 0.3);
 }
 
 // Medium Zoom

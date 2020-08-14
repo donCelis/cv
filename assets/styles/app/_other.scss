@@ -4,19 +4,22 @@
 
 // Bact to top
 .back-to-top {
-  border-top: rem(1px) solid $black-color;
-  border-left: rem(1px) solid $black-color;
   cursor: pointer;
-  height: rem(32px);
-  opacity: 0.5;
+  opacity: 1;
   @include position(fixed, $right: rem(40px), $bottom: rem(30px));
-  width: rem(32px);
-  transform: rotate(45deg);
-  transition: opacity 0.35s ease-out;
+  background: transparent;
+  transition: background 0.2s ease-out;
   z-index: 10;
+  border-radius: 100%;
+  padding: rem(3.2px);
 
   &:hover {
     opacity: 1;
+    background: $black-color;
+  }
+
+  i{
+    font-size: rem(32px);
   }
 
   @media only screen and (max-width: $medium) {
