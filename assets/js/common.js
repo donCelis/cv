@@ -1,5 +1,5 @@
 /*
- * Author: ArtStyles (ArtTemplate)
+ * Author: Alexander Celis (donCelis)
  * Template Name: vCard
  * Version: 1.0.3
 */

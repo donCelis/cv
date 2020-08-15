@@ -1,7 +1,7 @@
 $version: "1.1.0";
 
 /* ------------------------------------------------
- Author: ArtStyles (Art)
+ Author: Alexander Celis (donCelis)
  
  Template Name: vCard
  version: #{$version}
@@ -10,7 +10,6 @@ $version: "1.1.0";
 /* ------------------------------------------------
 
  - General Styles
- - Background
  - Typography
  - Preloader
  - Form
@@ -48,7 +47,6 @@ $version: "1.1.0";
 
 // General settings
 @import "app/general";
-@import "app/background";
 @import "app/typography";
 
 // Components

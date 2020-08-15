@@ -12,7 +12,6 @@ $size-nav: rem(60px);
   @include position(absolute, $top: 0, $right: 0);
   width: $size-nav;
   z-index: 2;
-  cursor: pointer;
 
   @media only screen and (max-width: $large) {
     height: #{$size-nav - rem(3px)};
