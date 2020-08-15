@@ -12,67 +12,66 @@ $size-nav: rem(60px);
   @include position(absolute, $top: 0, $right: 0);
   width: $size-nav;
   z-index: 2;
-  
+  cursor: pointer;
+
   @media only screen and (max-width: $large) {
     height: #{$size-nav - rem(3px)};
-	width: #{$size-nav - rem(3px)};
+    width: #{$size-nav - rem(3px)};
   }
-  
+
   @media only screen and (max-width: $small) {
     border-radius: 50%;
-	margin-top: rem(16px);
-	margin-right: rem(16px);
+    margin-top: rem(16px);
+    margin-right: rem(16px);
     position: fixed;
     height: #{$size-nav - rem(20px)};
-	width: #{$size-nav - rem(20px)};
-	z-index: 1101;
+    width: #{$size-nav - rem(20px)};
+    z-index: 1101;
   }
-  
+
   .open-menu & {
     @media only screen and (max-width: $small) {
-	  box-shadow: 0 0 0 rem(1px) rgba($tone-color, .5);
-	  background-color: transparent;
-	}
+      box-shadow: 0 0 0 rem(1px) rgba($tone-color, 0.5);
+      background-color: transparent;
+    }
   }
 }
- 
+
 // Hamburger
 .hamburger {
-  cursor: pointer;
-  
   .line {
     background-color: $white-color;
-	border-radius: rem(4px);
-	display: block;
-	margin: rem(5px) 0;
+    border-radius: rem(4px);
+    display: block;
+    margin: rem(5px) 0;
     height: rem(3px);
     width: rem(24px);
-	transition: all 0.2s ease-in-out;
-	
-	&:nth-child(2) {
-	  margin-left: rem(4px);
-	  width: rem(20px);
-	}
-	
-	@media only screen and (max-width: $medium) {
-	  margin: rem(4px) 0;
+    transition: all 0.2s ease-in-out;
+
+    &:nth-child(2) {
+      margin-left: rem(4px);
+      width: rem(20px);
+    }
+
+    @media only screen and (max-width: $medium) {
+      margin: rem(4px) 0;
       height: rem(2px);
       width: rem(18px);
-	  
-	  &:nth-child(2) {
-	    width: rem(14px);
-	  }	  
-	}
+
+      &:nth-child(2) {
+        width: rem(14px);
+      }
+    }
   }
-  
+
   &.is-active .line:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
-	
-	@media only screen and (max-width: $medium) {
-	  transform: translateY(6px) rotate(45deg);
-	}
+
+    @media only screen and (max-width: $medium) {
+      transform: translateY(6px) rotate(45deg);
+    }
   }
-  
+
   &.is-active .line:nth-child(2) {
     opacity: 0;
     transform: rotate(45deg);
@@ -80,16 +79,16 @@ $size-nav: rem(60px);
 
   &.is-active .line:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
-	
-	@media only screen and (max-width: $medium) {
-	  transform: translateY(-6px) rotate(-45deg);
-	}	
+
+    @media only screen and (max-width: $medium) {
+      transform: translateY(-6px) rotate(-45deg);
+    }
   }
-  
+
   &.is-active .line {
     @media only screen and (max-width: $small) {
-	  background-color: $tone-color;
-	}
+      background-color: $tone-color;
+    }
   }
 }
 
@@ -101,24 +100,24 @@ $size-nav: rem(60px);
   @include position(absolute, $top: 0, $right: 0);
   width: 70%;
   z-index: 1;
-  
+
   @media only screen and (max-width: $large) {
     height: #{$size-nav - rem(3px)};
     width: 80%;
   }
-  
+
   @media only screen and (max-width: $medium) {
     width: 100%;
   }
-  
+
   @media only screen and (max-width: $small) {
     height: 100vh;
     padding-right: 0;
     position: fixed;
-	pointer-events: none;
-	z-index: 1100;
+    pointer-events: none;
+    z-index: 1100;
   }
-  
+
   .open-menu & {
     pointer-events: all;
   }
@@ -128,92 +127,92 @@ $size-nav: rem(60px);
   color: $white-color;
   background: $tone-color;
   border-radius: rem(32px) 0 0 rem(32px);
-  box-shadow: 0 rem(24px) rem(40px) rgba($tone-color, .05), 
-              0 rem(8px) rem(16px) rgba($tone-color, .05);
+  box-shadow: 0 rem(24px) rem(40px) rgba($tone-color, 0.05),
+    0 rem(8px) rem(16px) rgba($tone-color, 0.05);
   @include flex($align: center, $justify: center);
   height: 100%;
   overflow: hidden;
-  
+
   @media only screen and (max-width: $medium) {
     border-radius: rem(20px) 0 0 rem(32px);
     font-size: rem(14px);
-  }  
-  
+  }
+
   @media only screen and (max-width: $small) {
     @include flex($direction: column, $align: center, $justify: center);
     color: $black-color;
     background-color: $white-color;
-	  background-image: none;
+    background-image: none;
     border-radius: 0;
     box-shadow: none;
-	  font-size: rem(24px)
+    font-size: rem(24px);
   }
-  
+
   &__item {
     margin-right: rem(48px);
-	
-	@media only screen and (max-width: $large) {
-	  margin-right: rem(32px);
-	}
-	
-	@media only screen and (max-width: $small) {
-	  margin-right: 0;
-	  margin-top: rem(3px);
-	  margin-bottom: rem(3px);
-	}
-	
-	a {
-    color: rgba($white-color,.5);
-	  
-	  &:hover {
-	    color: rgba($white-color,1);
-		  text-decoration: none;
-	  }
-	  
-	  @media only screen and (max-width: $small) {
-	    color: rgba($black-color,.5);
-	  
-	    &:hover {
-	      color: rgba($black-color,1);
-	    }
-	  }
-	  
-	  &.active {
-	    color: $white-color;
-		
-      @media only screen and (max-width: $small) {
-        color: $black-color;
+
+    @media only screen and (max-width: $large) {
+      margin-right: rem(32px);
+    }
+
+    @media only screen and (max-width: $small) {
+      margin-right: 0;
+      margin-top: rem(3px);
+      margin-bottom: rem(3px);
+    }
+
+    a {
+      color: rgba($white-color, 0.5);
+
+      &:hover {
+        color: rgba($white-color, 1);
+        text-decoration: none;
       }
-	  }
-	}
+
+      @media only screen and (max-width: $small) {
+        color: rgba($black-color, 0.5);
+
+        &:hover {
+          color: rgba($black-color, 1);
+        }
+      }
+
+      &.active {
+        color: $white-color;
+
+        @media only screen and (max-width: $small) {
+          color: $black-color;
+        }
+      }
+    }
   }
-	
+
   &__item:last-child {
-	margin-right: 0;
-	
+    margin-right: 0;
+
     @media only screen and (max-width: $small) {
       margin-right: 0;
     }
-  }  
+  }
 }
 
 // Nav alternative
 .inner-menu-alt {
   padding-right: 0;
   width: 100%;
-  
+
   .nav {
     border-radius: $border-rounded-20 $border-rounded-20 rem(32px) rem(32px);
     width: 100%;
-    transition: width .4s ease-in-out;
-  
+    transition: width 0.4s ease-in-out;
+
     @media only screen and (max-width: $small) {
       width: 0;
     }
-	
-	&__item:last-child {
-	  margin-right: 0;
-	}
+
+    &__item:last-child {
+      margin-right: 0;
+    }
   }
 }
 
