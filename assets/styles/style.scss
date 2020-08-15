@@ -23,12 +23,10 @@ $version: "1.1.0";
  - Cases
  - Clients
  - Contact
- - Single post
  - Footer
+
  - Contact
  - Portfolio
- - News
- - Single news
  - Testimonials
  - Timeline
  - Other
@@ -67,8 +65,6 @@ $version: "1.1.0";
 @import "app/clients";
 @import "app/contact";
 @import "app/portfolio";
-@import "app/news";
-@import "app/single-news";
 @import "app/testimonials";
 @import "app/timeline";
 
