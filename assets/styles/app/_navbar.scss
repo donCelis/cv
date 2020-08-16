@@ -38,6 +38,7 @@ $size-nav: rem(60px);
 
 // Hamburger
 .hamburger {
+  cursor: pointer;
   .line {
     background-color: $white-color;
     border-radius: rem(4px);

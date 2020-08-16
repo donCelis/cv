@@ -26,8 +26,8 @@ $version: "1.1.0";
 
  - Contact
  - Portfolio
- - Testimonials
  - Timeline
+ - Testimonials
  - Other
  
 ------------------------------------------------ */
@@ -50,10 +50,10 @@ $version: "1.1.0";
 @import "app/typography";
 
 // Components
-@import "app/form";
-@import "app/button";
 @import "app/preloader";
+@import "app/button";
 @import "app/sidebar";
+@import "app/form";
 @import "app/sections";
 @import "app/navbar";
 @import "app/footer";
@@ -61,9 +61,9 @@ $version: "1.1.0";
 // Pages, layouts
 @import "app/cases";
 @import "app/clients";
-@import "app/contact";
-@import "app/portfolio";
-@import "app/testimonials";
 @import "app/timeline";
+@import 'app/testimonials';
+@import "app/portfolio";
+@import "app/contact";
 
 @import "app/other";

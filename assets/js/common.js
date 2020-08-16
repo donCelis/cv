@@ -146,29 +146,26 @@ $(document).ready(function () {
   -------------------------------------------------------------------*/
 
   // Testimonials
-  $('.js-carousel-review').each(function () {
-    let carousel = new Swiper('.js-carousel-review', {
-      slidesPerView: 2,
+  $('.js-carousel-framework').each(function () {
+    let carousel = new Swiper('.js-carousel-framework', {
+      slidesPerView: 6,
       spaceBetween: 30,
       speed: 300,
-      grabCursor: true,
+      mousewheel: false,
+      loop: true,
+      grabCursor: false,
       watchOverflow: true,
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true
-      },
+      setWrapperSize: true,
       autoplay: {
-        delay: 5000,
+        delay: 3000,
+        disableOnInteraction: false,
       },
       breakpoints: {
         580: {
-          slidesPerView: 1,
+          slidesPerView: 4,
           spaceBetween: 20
         },
-        991: {
-          slidesPerView: 1
-        }
-      }
+      },
     });
   });
 
@@ -177,7 +174,7 @@ $(document).ready(function () {
     let carousel = new Swiper('.js-carousel-clients', {
       slidesPerView: 4,
       spaceBetween: 30,
-      //loop: true,
+      loop: true,
       grabCursor: true,
       watchOverflow: true,
       pagination: {
