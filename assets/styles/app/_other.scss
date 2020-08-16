@@ -13,7 +13,7 @@
 .back-to-top {
   cursor: pointer;
   opacity: 1;
-  @include position(fixed, $right: rem(40px), $bottom: rem(30px));
+  @include position(fixed, $right: rem(30px), $bottom: rem(30px));
   background: transparent;
   transition: background 0.2s ease-out;
   z-index: 10;
@@ -26,12 +26,11 @@
   }
 
   i{
-    font-size: rem(32px);
+    font-size: rem(30px);
   }
 
   @media only screen and (max-width: $medium) {
-    height: rem(24px);
-    width: rem(24px);
+    @include position(fixed, $right: rem(20px), $bottom: rem(20px));
   }
 
   @media only screen and (max-width: $small) {

@@ -46,6 +46,7 @@
 
   .btn {
     width: 100%;
+    display: inline-block;
 
     @media only screen and (max-width: $large-xl) {
       width: 40%;
@@ -112,7 +113,7 @@
   }
 
   .font-icon {
-    font-size: rem(18px);
+    font-size: rem(20px);
     margin-right: rem(14px);
   }
 }

@@ -145,12 +145,12 @@ $(document).ready(function () {
     Carousel
   -------------------------------------------------------------------*/
 
-  // Testimonials
+  // framework
   $('.js-carousel-framework').each(function () {
     let carousel = new Swiper('.js-carousel-framework', {
       slidesPerView: 6,
       spaceBetween: 30,
-      speed: 300,
+      speed: 500,
       mousewheel: false,
       loop: true,
       grabCursor: false,
