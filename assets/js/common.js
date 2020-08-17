@@ -148,14 +148,21 @@ $(document).ready(function () {
   // framework
   $('.js-carousel-framework').each(function () {
     let carousel = new Swiper('.js-carousel-framework', {
-      slidesPerView: 6,
+      slidesPerView: 8,
+      slidesPerGroup: 2,
+      loopFillGroupWithBlank: true,
       spaceBetween: 30,
-      speed: 500,
+      speed: 1000,
       mousewheel: false,
       loop: true,
       grabCursor: false,
       watchOverflow: true,
       setWrapperSize: true,
+      pagination: {
+        el: '.swiper-pagination',
+        dynamicBullets: false,
+        clickable: true,
+      },
       autoplay: {
         delay: 3000,
         disableOnInteraction: false,
