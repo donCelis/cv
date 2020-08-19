@@ -75,12 +75,12 @@ $mail = new PHPMailer(true);
 
 //Recipients
 $mail->setFrom('no-reply@mydomain.com', 'Company Name');  // which email will be sent from
-$mail->addAddress('example@mail.com', 'Company Name');  // who needs to send a letter
+$mail->addAddress('dacelis0@misena.edu.co', 'Alexander Celis');  // who needs to send a letter
 
 // Content
 $mail->CharSet = 'UTF-8';
 $mail->IsHTML(true);
-$mail->Subject = 'Contact Form';  // subject of the letter
+$mail->Subject = 'Propuesta de Trabajo - Alexander Celis';  // subject of the letter
 $mail->Body = $body;
 $mail->AltBody = 'Name: $name, Email sender: $email, Comment: $message';
 	

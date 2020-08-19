@@ -5,8 +5,12 @@
 .js-carousel-clients {
   padding-top: rem(8px);
   padding-bottom: rem(16px);
+  text-align: center;
 
   .swiper-slide {
+    img {
+      filter: invert(1);
+    }
     @media only screen and (max-width: $small) {
       text-align: center;
     }

@@ -5,13 +5,14 @@
 .swiper-container {
   .swiper-wrapper {
     min-height: 100%;
+    align-items: center;
   }
 }
 
 .review-item {
   @include flex($direction: column);
   background-color: $gray-100-color;
-  background-image: url("../icons/icon-quote.svg");
+  background-image: url("../icons/dark/icon-quote.svg");
   background-repeat: no-repeat;
   background-position: right rem(30px) top rem(30px);
   border-radius: $border-rounded-20;

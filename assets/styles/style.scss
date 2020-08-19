@@ -11,23 +11,22 @@ $version: "1.1.0";
 
  - General Styles
  - Typography
- - Preloader
- - Form
- - Button
- - Preloader
- - Sidebar
- - Sections
- - Navbar
- - Footer
- - Cases
- - Clients
- - Contact
- - Footer
+ -Components
+    - Preloader
+    - Button
+    - Sidebar
+    - Form
+    - Sections
+    - Navbar
+    - Footer
+ -Pages
+    - Cases
+    - Clients
+    - Contact
+    - Timeline
+    - Testimonials
+    - Portfolio
 
- - Contact
- - Portfolio
- - Timeline
- - Testimonials
  - Other
  
 ------------------------------------------------ */
@@ -61,9 +60,9 @@ $version: "1.1.0";
 // Pages, layouts
 @import "app/cases";
 @import "app/clients";
-@import "app/timeline";
-@import 'app/testimonials';
-@import "app/portfolio";
 @import "app/contact";
+@import "app/timeline";
+@import "app/testimonials";
+@import "app/portfolio";
 
 @import "app/other";

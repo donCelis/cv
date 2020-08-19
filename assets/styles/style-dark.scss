@@ -22,6 +22,7 @@ $version: "1.0.2";
    - Box
    - Avatars
    - Social
+   - Progress
    - Badges
    - Tooltips
    
@@ -35,7 +36,6 @@ $version: "1.0.2";
    
  - Clients
  - Timeline
- - Progress
  
  - Portfolio
    - Filter
@@ -518,6 +518,18 @@ $size-nav: rem(60px);
 
   &-active {
     background: $dark-tone-color;
+  }
+}
+
+/* -----------------------------------------------------------------
+    - Clients
+----------------------------------------------------------------- */
+
+.js-carousel-clients {
+  .swiper-slide {
+    img {
+      filter: invert(0);
+    }
   }
 }
 

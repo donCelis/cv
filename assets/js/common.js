@@ -180,13 +180,21 @@ $(document).ready(function () {
   $('.js-carousel-clients').each(function () {
     let carousel = new Swiper('.js-carousel-clients', {
       slidesPerView: 4,
-      spaceBetween: 30,
+      spaceBetween: 0,
       loop: true,
-      grabCursor: true,
+      grabCursor: false,
       watchOverflow: true,
+      setWrapperSize: true,
+      mousewheel: false,
+      speed: 1000,
       pagination: {
         el: '.swiper-pagination',
-        clickable: true
+        dynamicBullets: false,
+        clickable: true,
+      },
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
       },
       breakpoints: {
         320: {
@@ -195,11 +203,11 @@ $(document).ready(function () {
         },
         580: {
           slidesPerView: 2,
-          spaceBetween: 30
+          spaceBetween: 0
         },
         991: {
           slidesPerView: 3,
-          spaceBetween: 30
+          spaceBetween: 0
         }
       }
     });
@@ -497,19 +505,6 @@ $(document).ready(function () {
     horizrailenabled: false
   });
 
-
-  /*-----------------------------------------------------------------
-    emoji add in textarea
-  -------------------------------------------------------------------*/
-
-  $(function () {
-    $('.emoji-wrap img').on('click', function () {
-      let emoji = $(this).attr('title');
-      $('#commentForm').val($('#commentForm').val() + " " + emoji + " ");
-    });
-  });
-
-
   /*-----------------------------------------------------------------
   mediumZoom
   -------------------------------------------------------------------*/
@@ -541,7 +536,7 @@ $(document).ready(function () {
   $("#contact-form").validator().on("submit", function (event) {
     if (event.isDefaultPrevented()) {
       formError();
-      submitMSG(false, "Please fill in the form...");
+      submitMSG(false, "Por favor, complete los campos");
     } else {
       event.preventDefault();
       submitForm();
@@ -572,7 +567,7 @@ $(document).ready(function () {
 
   function formSuccess() {
     $("#contact-form")[0].reset();
-    submitMSG(true, "Thanks! Your message has been sent.");
+    submitMSG(true, "Gracias, su mensaje ha sido enviado.");
   }
 
   function formError() {
